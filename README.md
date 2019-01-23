@@ -30,7 +30,7 @@ Each item may have a parent or not. The first level doesn't have parent and by g
 - Mbstring PHP Extension
 
 ## Clone and Install
-You can get the repository from https://github.com/xStarman/devsquad-laravel by clicking in "Clone or Download" and Download ZIP file or run `$ git clone https://github.com/xStarman/devsquad-laravel.git` in a directory you prefer.
+You can get the repository from https://github.com/xStarman/recursive-todo by clicking in "Clone or Download" and Download ZIP file or run `$ git clone https://github.com/xStarman/devsquad-laravel.git` in a directory you prefer.
 
 With all cloned files you will need to run composer to install dependencies:
 `$ composer /path/to/cloned/dir install`
