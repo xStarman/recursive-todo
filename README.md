@@ -41,7 +41,7 @@ Migrate columns (don't forget to change default .ENV db data to your data):
 
 
 ## Start Server
-You can use xampp or something like, but you wold like to use PHP's built in server by running `$ php -S localhost:8000 -t public` into the installation directory
+You can use xampp or something like, but maybe you would like to use PHP's built in server by running `$ php -S localhost:8000 -t public` into the installation directory
 
 ## Endpoints
 ### Todo Items aka Task
