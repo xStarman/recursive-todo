@@ -8,8 +8,12 @@ use DB;
 use Illuminate\Http\Request;
 
 class StatusController extends Controller {
-    public function index() {
-        $status = Status::active()->get();
+    public function index($status = null) {
+        if($status){
+            $status = Status::active()->where('id', $todoitem)->first();
+        }else{
+            $status = Status::active()->get();
+        }
         return response()->json($status, 200);
     }
 
