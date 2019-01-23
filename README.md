@@ -30,13 +30,84 @@ Each item may have a parent or not. The first level doesn't have parent and by g
 - Mbstring PHP Extension
 
 ## Clone and Install
-You can get the repository from https://github.com/xStarman/devsquad-laravel by clicking in "Clone or Download" and Download ZIP file or run $ git clone https://github.com/xStarman/devsquad-laravel.git in a directory you prefer.
+You can get the repository from https://github.com/xStarman/devsquad-laravel by clicking in "Clone or Download" and Download ZIP file or run `$ git clone https://github.com/xStarman/devsquad-laravel.git` in a directory you prefer.
 
 With all cloned files you will need to run composer to install dependencies:
-$ composer /path/to/cloned/dir install
+`$ composer /path/to/cloned/dir install`
+
+Migrate columns (don't forget to change default .ENV db data to your data):
+`$ php artisan migrate`
+
+
 
 ## Start Server
 You can use xampp or something like, but you wold like to use PHP's built in server by running `$ php -S localhost:8000 -t public` into the installation directory
+
+## Endpoints
+### Todo Items aka Task
+`GET -> /todo/item[/id_item]`
+> Get a list of items or some specific item -> when geting a specific item, history and children will come together
+
+`POST -> /todo/item`
+> Creates a new Todo Item
+#### Body
+```JSON
+{
+	"status_id"	:1,
+	"parent_id" : 1,
+	"todo_name"	: "Nice Task",
+	"todo_description" : "Task description",
+	"expected_end_date": "2019-01-23",
+}
+```
+
+`PUT -> /todo/item/[id_item]`
+> Update a task -> If the status change `status_change_reason` must be provided. Also creates a new Status log record
+#### Body
+```JSON
+{
+	"status_id"	:1,
+	"parent_id" : 1,
+	"todo_name"	: "Nice Task",
+	"todo_description" : "Task description",
+	"expected_end_date": "2019-01-23",
+  "status_change_reason": "New status reason"
+}
+```
+`DELETE -> /todo/item/[id_item]`
+> Delete a task -> changes todoitem active column to false
+
+
+### Status
+`GET -> /todo/status[/id_item]`
+> Get a list of status or some specific status
+
+`POST -> /todo/status`
+> Creates a status -> Lower priority comes first on tasks list
+#### Body
+```JSON
+{
+	"status_name" : "Done",
+    "status_description": "Task was done",
+    "color" : "#000",
+    "priority": 1
+}
+```
+
+`PUT -> /todo/status/[id_item]`
+> Update a status 
+#### Body
+```JSON
+{
+	"status_name" : "Done",
+    "status_description": "Task was done",
+    "color" : "#000",
+    "priority": 1
+}
+```
+`DELETE -> /todo/status/[id_item]`
+> Delete status
+
 
 
 
