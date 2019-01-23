@@ -71,7 +71,7 @@ You can use xampp or something like, but you wold like to use PHP's built in ser
 	"todo_name"	: "Nice Task",
 	"todo_description" : "Task description",
 	"expected_end_date": "2019-01-23",
-  "status_change_reason": "New status reason"
+	"status_change_reason": "New status reason"
 }
 ```
 `DELETE -> /todo/item/[id_item]`
@@ -88,9 +88,9 @@ You can use xampp or something like, but you wold like to use PHP's built in ser
 ```JSON
 {
 	"status_name" : "Done",
-    "status_description": "Task was done",
-    "color" : "#000",
-    "priority": 1
+	"status_description": "Task was done",
+	"color" : "#000",
+	"priority": 1
 }
 ```
 
@@ -100,9 +100,9 @@ You can use xampp or something like, but you wold like to use PHP's built in ser
 ```JSON
 {
 	"status_name" : "Done",
-    "status_description": "Task was done",
-    "color" : "#000",
-    "priority": 1
+	"status_description": "Task was done",
+	"color" : "#000",
+	"priority": 1
 }
 ```
 `DELETE -> /todo/status/[id_item]`
